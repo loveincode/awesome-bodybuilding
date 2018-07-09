@@ -12,39 +12,72 @@
 
     <title>awesome-Bodybuilding</title>
 </head>
+<style>
+.el-header {
+    background-color: #B3C0D1;
+    color: #333;
+    line-height: 56px;
+}
+
+.el-aside {
+    color: #333;
+}
+</style>
 
 <body>
     <div id="app">
-    <h1>awesome-Bodybuilding</h1>
-    胸围基准
-    <div>
-    <el-input v-model="base" placeholder="请输入内容"></el-input>
+            <h1>awesome-Bodybuilding</h1>
+    <el-container style="height: 600px; border: 1px solid #eee">
+            <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
+                <el-menu :default-openeds="['1', '3']">
+                <el-submenu index="1">
+                    <template slot="title"><i class="el-icon-menu"></i>常用计算</template>
+                    <el-menu-item-group>
+                    <el-menu-item index="2-1">身体围度计算</el-menu-item>
+                    </el-menu-item-group>
+                </el-submenu>
+                </el-menu>
+            </el-aside>
+            
+            <el-container>
+                <el-main>
+                        胸围基准
+                        <el-row>
+                            <el-col :span="12"><el-input  placeholder="请输入内容"   v-model="base"  clearable></el-input></el-col>
+                        </el-row>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>颈围 38%</th>
+                                    <th>上臂围 36%</th>
+                                    <th>前臂围 30%</th>
+                                    <th>腰围 75%</th>
+                                    <th>臀围 90%</th>
+                                    <th>大腿围 60%</th>
+                                    <th>小腿围 40%</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>{{v38}}</th>
+                                    <th>{{v36}}</th>
+                                    <th>{{v30}}</th>
+                                    <th>{{v75}}</th>
+                                    <th>{{v90}}</th>
+                                    <th>{{v60}}</th>
+                                    <th>{{v40}}</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                </el-main>
+            </el-container>
+        </el-container>
+    
+    
     </div>
-    <table>
-        <thead>
-            <tr>
-                <th>颈围 38%</th>
-                <th>上臂围 36%</th>
-                <th>前臂围 30%</th>
-                <th>腰围 75%</th>
-                <th>臂围 90%</th>
-                <th>大腿围 60%</th>
-                <th>小腿围 40%</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th>{{v38}}</th>
-                <th>{{v36}}</th>
-                <th>{{v30}}</th>
-                <th>{{v75}}</th>
-                <th>{{v90}}</th>
-                <th>{{v60}}</th>
-                <th>{{v40}}</th>
-            </tr>
-        </tbody>
-    </table>
-    </div>
+    
+    
+          
     <script>
     
         //一个vue的实例

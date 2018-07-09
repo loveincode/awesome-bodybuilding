@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- vue -->
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+
+    <!-- element-ui 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- element-ui 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
+    <title>awesome-Bodybuilding</title>
+</head>
+
+<body>
+    <div id="app">
+    <h1>awesome-Bodybuilding</h1>
+    胸围基准
+    <div>
+    <el-input v-model="base" placeholder="请输入内容"></el-input>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>颈围 38%</th>
+                <th>上臂围 36%</th>
+                <th>前臂围 30%</th>
+                <th>腰围 75%</th>
+                <th>臂围 90%</th>
+                <th>大腿围 60%</th>
+                <th>小腿围 40%</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>{{v38}}</th>
+                <th>{{v36}}</th>
+                <th>{{v30}}</th>
+                <th>{{v75}}</th>
+                <th>{{v90}}</th>
+                <th>{{v60}}</th>
+                <th>{{v40}}</th>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    <script>
+    
+        //一个vue的实例
+        new Vue({
+            el: '#app',
+            //model
+            data: {
+                base:'50'
+            },
+    
+            computed:{
+                v38:function() {
+                    var that=this;
+                    var temp=Math.round(that.base * 0.38*100)/100;
+                    return temp;
+                },
+                v36:function() {
+                    var that=this;
+                    var temp=Math.round(that.base * 0.36*100)/100;
+                    return temp;
+                },
+                v30:function() {
+                    var that=this;
+                    var temp=Math.round(that.base * 0.30*100)/100;
+                    return temp;
+                },
+                v75:function() {
+                    var that=this;
+                    var temp=Math.round(that.base * 0.75*100)/100;
+                    return temp;
+                },
+                v90:function() {
+                    var that=this;
+                    var temp=Math.round(that.base * 0.90*100)/100;
+                    return temp;
+                },
+                v60:function() {
+                    var that=this;
+                    var temp=Math.round(that.base * 0.60*100)/100;
+                    return temp;
+                },
+                v40:function() {
+                    var that=this;
+                    var temp=Math.round(that.base * 0.40*100)/100;
+                    return temp;
+                },
+            },
+    
+        })
+    
+    </script>
+
+</body>
+
+</html>
+
